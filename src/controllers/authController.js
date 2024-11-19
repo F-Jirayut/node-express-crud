@@ -1,3 +1,4 @@
+const { Sequelize } = require('sequelize');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const User = require('../models/User');
@@ -27,6 +28,7 @@ const register = async (req, res) => {
     await deleteFromRedis('all_users');
     res.status(201).json({ message: 'User registered successfully', user });
   } catch (err) {
+    console.log(err.message);
     res.status(500).json({ error: err.message });
   }
 };

@@ -16,7 +16,6 @@ const sequelize = new Sequelize(
 async function authenticate() {
   try {
     await sequelize.authenticate();
-    console.log('การเชื่อมต่อ PostgreSQL สำเร็จ!');
   } catch (error) {
     console.error('ไม่สามารถเชื่อมต่อ PostgreSQL:', error);
   }
